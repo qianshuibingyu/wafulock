@@ -1,4 +1,12 @@
 (function () {
+    function normalizeRecentArticleSequence() {
+        if (!location.pathname.replace(/\.html$/, '').endsWith('/smart-lock-oem-sample-approval-change-control')) return;
+        const previous = document.querySelector('.wafu-article-nav .wafu-nav-prev');
+        if (!previous || !previous.classList.contains('wafu-nav-disabled')) return;
+        const copy = { en: ['Previous article', 'WF-010, WF-019 and WF-026: Build an Invisible Smart-Lock Product Line'], de: ['Vorheriger Artikel', 'WF-010, WF-019 und WF-026: Eine unsichtbare Smart-Lock-Produktlinie für Projekte aufbauen'], it: ['Articolo precedente', 'WF-010, WF-019 e WF-026: costruire una gamma'], 'pt-PT': ['Artigo anterior', 'WF-010, WF-019 e WF-026: construir uma gama'], ru: ['Предыдущая статья', 'Портфель дистрибьютора невидимых умных замков: WF-010, WF-019 и WF-026'], es: ['Artículo anterior', 'Cómo elegir WF-010, WF-019 y WF-026 para un proyecto'], 'zh-CN': ['上一篇', 'WF-010、WF-019 和 WF-026：构建项目产品系列'] }[document.documentElement.lang] || ['Previous article', 'WF-010, WF-019 and WF-026: Build an Invisible Smart-Lock Product Line'];
+        previous.outerHTML = `<a class="wafu-nav-prev" href="./wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio"><span class="wafu-nav-arrow">❮</span><span class="wafu-nav-content"><span class="wafu-nav-label">${copy[0]}</span><span class="wafu-nav-text">${copy[1]}</span></span></a>`;
+    }
+
     function scheduleIdle(callback, timeout) {
         if ('requestIdleCallback' in window) {
             requestIdleCallback(callback, { timeout: timeout || 2000 });
@@ -8,6 +16,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        normalizeRecentArticleSequence();
         const isDesktop = window.matchMedia('(min-width: 959px)').matches;
         const isProductPage = !!document.querySelector('main.prod-detail');
 

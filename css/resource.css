@@ -40,6 +40,8 @@ body:has(main .solutions-section) .breadcrumb-nav .breadcrumb-inner {
     font-size: 1.2rem;
     line-height: 1.5;
     color: #8a9199;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .breadcrumb-nav .page-seo-bar a,
@@ -200,6 +202,64 @@ body:has(main .solutions-section) .breadcrumb-nav .breadcrumb-inner {
   flex: 1;
 }
 
+.breadcrumb-nav .page-seo-article {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 7px 14px;
+    border: 1px solid rgba(26, 115, 232, .26);
+    border-radius: 999px;
+    background: #f2f7ff;
+    color: #1769c2;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+/* 文章入口使用短胶囊，避免把整串文章标题挤进面包屑。 */
+.article-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.article-pills a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 6px 13px;
+    border: 1px solid rgba(26, 115, 232, 0.26);
+    border-radius: 999px;
+    background: #f2f7ff;
+    color: #1769c2;
+    font-size: .88rem;
+    line-height: 1.25;
+    text-decoration: none;
+    transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.article-pills a:hover,
+.article-pills a:focus-visible {
+    color: #fff;
+    background: #1a73e8;
+    border-color: #1a73e8;
+}
+
+.resource-article-links {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 24px 0 12px;
+    border-top: 1px solid #e8ecf0;
+}
+
+.resource-article-links-title {
+    margin: 0 0 13px;
+    color: #1f2937;
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
 /* ========= 移动端适配 ========= */
 @media (max-width: 768px) {
     .resource-hero {
@@ -270,6 +330,16 @@ body:has(main .solutions-section) .breadcrumb-nav .breadcrumb-inner {
 
     .card-desc {
         font-size: 0.9rem;
+    }
+
+    .article-pills a {
+        font-size: .84rem;
+    }
+
+    .resource-article-links {
+        width: 92%;
+        margin-top: 24px;
+        padding-top: 20px;
     }
 }
 
