@@ -1218,4 +1218,18 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wafulock.cn/sitemap"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://wafuen.com/sitemap"/>
   </url>
+  <url>
+    <loc>https://wafulock.cn/resource/wf-026-redundant-hidden-lock-project-assessment</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wafulock.cn/resource/wf-026-redundant-hidden-lock-project-assessment"/>
+  </url>
+  <url>
+    <loc>https://wafulock.cn/resource/invisible-smart-lock-rfq-preparation</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wafulock.cn/resource/invisible-smart-lock-rfq-preparation"/>
+  </url>
 </urlset>
