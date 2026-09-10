@@ -921,6 +921,7 @@ body.wechat-modal-open {
   height: 50px;
   margin-right: 10px;
   margin-top: 5px;
+  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;

@@ -482,7 +482,8 @@ body {
     width: 100%;
     border-radius: 8px;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
+    background: #fff;
 }
 
 .scenario-text {
@@ -1038,5 +1039,54 @@ body {
     
     .spec-table td:last-child {
         width: 60%;
+    }
+}
+
+/* --- 产品页分享区 --- */
+.wafu-share-section {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 24px 20px;
+    background: #f7f9fc;
+    border-top: 1px solid #e5ebf2;
+    border-bottom: 1px solid #e5ebf2;
+}
+
+.wafu-share-inner {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.wafu-share-title {
+    margin: 0;
+    color: #123a64;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.wafu-share-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.wafu-share-buttons .social-icon.wechat {
+    font-size: 0;
+    line-height: 0;
+}
+
+@media (max-width: 600px) {
+    .wafu-share-inner {
+        flex-direction: column;
+        gap: 12px;
     }
 }
