@@ -1799,3 +1799,23 @@ img {
         min-width: 680px;
     }
 }
+
+
+.wafu-formula-box {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.wafu-formula-image {
+    display: block;
+    width: min(100%, 900px);
+    height: auto;
+    margin: 0 auto;
+}
+
+.wafu-inline-formula {
+    display: inline-block;
+    width: min(100%, 600px);
+    height: auto;
+    vertical-align: middle;
+}
