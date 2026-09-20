@@ -676,3 +676,311 @@ body {
         text-align: left !important;
     }
 }
+/* Technology resource hub */
+.technology-hub {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 34px 0 80px;
+    color: #22324a;
+}
+
+.technology-hub-intro {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.technology-hub-kicker,
+.technology-hub-section-index {
+    margin: 0 0 8px;
+    color: #1a73e8;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.technology-hub-title {
+    margin: 0;
+    color: #13243c;
+    font-size: 2.5rem;
+    line-height: 1.15;
+}
+
+.technology-hub-lead {
+    margin: 16px auto 0;
+    max-width: 680px;
+    color: #53657c;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.technology-hub-paths {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 0 58px;
+}
+
+.technology-hub-path {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #d9e4f0;
+    border-radius: 7px;
+    background: #f8fbff;
+    color: #19395f;
+    text-decoration: none;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.technology-hub-path:hover,
+.technology-hub-path:focus-visible {
+    border-color: #6e9ed3;
+    box-shadow: 0 8px 20px rgba(27, 83, 143, .12);
+    outline: 0;
+    transform: translateY(-2px);
+}
+
+.technology-hub-path-index {
+    flex: 0 0 auto;
+    color: #1a73e8;
+    font-size: .82rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.technology-hub-path strong,
+.technology-hub-path small {
+    display: block;
+}
+
+.technology-hub-path strong {
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.technology-hub-path small {
+    margin-top: 5px;
+    color: #64758a;
+    font-size: .84rem;
+    line-height: 1.45;
+}
+
+.technology-hub-section {
+    scroll-margin-top: 24px;
+    margin: 0 0 58px;
+}
+
+.technology-hub-section-heading {
+    display: grid;
+    grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr);
+    align-items: end;
+    gap: 28px;
+    margin: 0 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dce5ef;
+}
+
+.technology-hub-section-heading > div {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    min-width: 0;
+}
+
+.technology-hub-section-heading h2 {
+    margin: 0;
+    color: #182f4d;
+    font-size: 1.45rem;
+    line-height: 1.3;
+}
+
+.technology-hub-section-heading > p {
+    margin: 0;
+    color: #64758a;
+    font-size: .94rem;
+    line-height: 1.6;
+}
+
+.technology-hub-section-index {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.technology-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.technology-hub-card {
+    min-width: 0;
+    margin: 0;
+}
+
+.technology-hub-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e0e7ef;
+    border-radius: 6px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(25, 54, 88, .06);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.technology-hub-card-link:hover,
+.technology-hub-card-link:focus-visible {
+    border-color: #7aa4d0;
+    box-shadow: 0 10px 24px rgba(25, 76, 132, .12);
+    outline: 0;
+    transform: translateY(-3px);
+}
+
+.technology-hub-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 28px;
+}
+
+.technology-hub-stage {
+    display: inline-flex;
+    max-width: 62%;
+    padding: 4px 8px;
+    border-left: 3px solid #1a73e8;
+    background: #f1f6fc;
+    color: #205488;
+    font-size: .75rem;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.technology-hub-card-top time {
+    flex: 0 0 auto;
+    color: #7b8998;
+    font-size: .76rem;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.technology-hub-card h3 {
+    margin: 16px 0 10px;
+    color: #1a2d46;
+    font-size: 1.1rem;
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+}
+
+.technology-hub-reader,
+.technology-hub-summary {
+    margin: 0;
+    color: #607187;
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+.technology-hub-reader span {
+    color: #314e70;
+    font-weight: 700;
+}
+
+.technology-hub-summary {
+    margin-top: 9px;
+    color: #42566f;
+}
+
+.technology-hub-read {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 18px;
+    color: #1769c2;
+    font-size: .86rem;
+    font-weight: 750;
+}
+
+.technology-hub-read span {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+@media (max-width: 992px) {
+    .technology-hub-paths,
+    .technology-hub-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .technology-hub-section-heading {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .technology-hub {
+        width: min(100% - 32px, 620px);
+        padding-top: 18px;
+    }
+
+    .technology-hub-title {
+        font-size: 2rem;
+    }
+
+    .technology-hub-lead {
+        font-size: .96rem;
+    }
+
+    .technology-hub-paths,
+    .technology-hub-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technology-hub-paths {
+        margin-bottom: 42px;
+    }
+
+    .technology-hub-section {
+        margin-bottom: 44px;
+    }
+
+    .technology-hub-section-heading h2 {
+        font-size: 1.25rem;
+    }
+
+    .technology-hub-card-link {
+        padding: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .technology-hub {
+        width: calc(100% - 24px);
+    }
+
+    .technology-hub-card-top {
+        display: block;
+    }
+
+    .technology-hub-stage {
+        max-width: 100%;
+    }
+
+    .technology-hub-card-top time {
+        display: block;
+        margin-top: 7px;
+    }
+}

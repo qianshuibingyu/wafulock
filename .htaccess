@@ -7,6 +7,20 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Retire resource URLs with direct permanent redirects before extensionless mapping.
+  RewriteRule ^resource/technology-(eleven|twenty|seven)(\.html)?$ /resource/smart-lock-factory-audit-guide [R=301,L,NE]
+  RewriteRule ^resource/technology-thirteen(\.html)?$ /resource/invisible-lock-odm-development-guide [R=301,L,NE]
+  RewriteRule ^resource/technology-four(\.html)?$ /resource/invisible-lock-engineering-selection [R=301,L,NE]
+  RewriteRule ^resource/technology-eight(\.html)?$ /resource/technology-nine [R=301,L,NE]
+  RewriteRule ^resource/technology-ten(\.html)?$ /resource/smart-invisible-lock-solutions [R=301,L,NE]
+  RewriteRule ^resource/technology-fourteen(\.html)?$ /resource/invisible-smart-lock-rfq-preparation [R=301,L,NE]
+  RewriteRule ^resource/technology-twentyone(\.html)?$ /resource/wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio [R=301,L,NE]
+  RewriteRule ^resource/invisible-lock-compatibility-guide(\.html)?$ /resource/invisible-lock-compatibility-issues [R=301,L,NE]
+  RewriteRule ^resource/invisible-lock-(ODM|odm)(\.html)?$ /resource/invisible-lock-odm-development-guide [R=301,L,NE]
+  RewriteRule ^resource/bulk-invisible-lock(\.html)?$ /resource/invisible-smart-lock-rfq-preparation [R=301,L,NE]
+  RewriteRule ^resource/invisible-lock-line(\.html)?$ /resource/wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio [R=301,L,NE]
+  RewriteRule ^resource/invisible-lock-guide(\.html)?$ /resource/smart-lock-factory-audit-guide [R=301,L,NE]
+
   # Search-engine discovery files must be served directly as public text/XML.
   RewriteRule ^robots\.txt$ - [END]
   RewriteRule ^sitemap\.xml$ - [END]

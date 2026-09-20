@@ -9,24 +9,44 @@ https://wafulock.cn/* https://wafulock.cn/:splat 301
 # Retired URLs (before .html wildcard rules)
 /resource/invisible-locks-smart-home-growth-drivers /resource/smart-invisible-lock-solutions 301
 /resource/invisible-locks-smart-home-growth-drivers.html /resource/smart-invisible-lock-solutions 301
+/resource/technology-eleven /resource/smart-lock-factory-audit-guide 301
+/resource/technology-eleven.html /resource/smart-lock-factory-audit-guide 301
+/resource/technology-twenty /resource/smart-lock-factory-audit-guide 301
+/resource/technology-twenty.html /resource/smart-lock-factory-audit-guide 301
+/resource/technology-seven /resource/smart-lock-factory-audit-guide 301
+/resource/technology-seven.html /resource/smart-lock-factory-audit-guide 301
+/resource/technology-thirteen /resource/invisible-lock-odm-development-guide 301
+/resource/technology-thirteen.html /resource/invisible-lock-odm-development-guide 301
+/resource/technology-four /resource/invisible-lock-engineering-selection 301
+/resource/technology-four.html /resource/invisible-lock-engineering-selection 301
+/resource/technology-eight /resource/technology-nine 301
+/resource/technology-eight.html /resource/technology-nine 301
+/resource/technology-ten /resource/smart-invisible-lock-solutions 301
+/resource/technology-ten.html /resource/smart-invisible-lock-solutions 301
+/resource/technology-fourteen /resource/invisible-smart-lock-rfq-preparation 301
+/resource/technology-fourteen.html /resource/invisible-smart-lock-rfq-preparation 301
+/resource/technology-twentyone /resource/wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio 301
+/resource/technology-twentyone.html /resource/wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio 301
+/resource/invisible-lock-compatibility-guide /resource/invisible-lock-compatibility-issues 301
+/resource/invisible-lock-compatibility-guide.html /resource/invisible-lock-compatibility-issues 301
 
 # Legacy semantic resource slugs → current canonical URLs
-/resource/invisible-lock-ODM /resource/technology-thirteen 301
-/resource/invisible-lock-ODM.html /resource/technology-thirteen 301
+/resource/invisible-lock-ODM /resource/invisible-lock-odm-development-guide 301
+/resource/invisible-lock-ODM.html /resource/invisible-lock-odm-development-guide 301
 /resource/anti_pry-invisible-lock /resource/technology-sixteen 301
 /resource/anti_pry-invisible-lock.html /resource/technology-sixteen 301
 /resource/invisible-lock-tech /resource/technology-twelve 301
 /resource/invisible-lock-tech.html /resource/technology-twelve 301
-/resource/bulk-invisible-lock /resource/technology-fourteen 301
-/resource/bulk-invisible-lock.html /resource/technology-fourteen 301
-/resource/invisible-lock-line /resource/technology-twentyone 301
-/resource/invisible-lock-line.html /resource/technology-twentyone 301
+/resource/bulk-invisible-lock /resource/invisible-smart-lock-rfq-preparation 301
+/resource/bulk-invisible-lock.html /resource/invisible-smart-lock-rfq-preparation 301
+/resource/invisible-lock-line /resource/wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio 301
+/resource/invisible-lock-line.html /resource/wf-010-wf-019-wf-026-invisible-smart-lock-distributor-portfolio 301
 /resource/invisible-lock-troubleshooting /resource/technology-seventeen 301
 /resource/invisible-lock-troubleshooting.html /resource/technology-seventeen 301
 /resource/rental-invisible-lock /resource/technology-nineteen 301
 /resource/rental-invisible-lock.html /resource/technology-nineteen 301
-/resource/invisible-lock-guide /resource/technology-twenty 301
-/resource/invisible-lock-guide.html /resource/technology-twenty 301
+/resource/invisible-lock-guide /resource/smart-lock-factory-audit-guide 301
+/resource/invisible-lock-guide.html /resource/smart-lock-factory-audit-guide 301
 
 # Homepage alias & retired paths
 /index / 301
