@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金属柜体为什么影响无线电子锁？433 MHz、Bluetooth 与 Wi-Fi 的 PCB 天线设计 | WAFU</title>
+    <meta name="keywords" content="金属柜无线锁,433MHz柜锁,蓝牙柜锁,Wi-Fi柜锁,PCB天线设计,射频屏蔽">
+    <meta name="description" content="解析金属柜体对 433 MHz、Bluetooth 和 Wi-Fi 电子锁的影响，覆盖天线位置、PCB 接地、电机噪声与闭门验证。">
+
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://wafulock.cn/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="zh-CN" href="https://wafulock.cn/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="en" href="https://wafuen.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="de" href="https://wafulockde.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="fr" href="https://wafulockfr.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="it" href="https://wafulockit.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="pt" href="https://wafulockpt.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="es" href="https://wafulockes.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="ru" href="https://wafulockru.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+<link rel="alternate" hreflang="x-default" href="https://wafuen.com/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+    <meta property="og:site_name" content="WAFU 智能锁">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="金属柜体为什么影响无线电子锁？433 MHz、Bluetooth 与 Wi-Fi 的 PCB 天线设计">
+    <meta property="og:description" content="解析金属柜体对 433 MHz、Bluetooth 和 Wi-Fi 电子锁的影响，覆盖天线位置、PCB 接地、电机噪声与闭门验证。">
+    <meta property="og:url" content="https://wafulock.cn/resource/metal-cabinet-wireless-lock-rf-pcb-design">
+    <meta property="og:image" content="https://wafulock.cn/images/webp/articles/metal-cabinet-lock-pcb-rf-architecture.webp">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="article:published_time" content="2026-09-29">
+    <meta property="article:modified_time" content="2026-09-29">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="金属柜体为什么影响无线电子锁？433 MHz、Bluetooth 与 Wi-Fi 的 PCB 天线设计">
+    <meta name="twitter:description" content="解析金属柜体对 433 MHz、Bluetooth 和 Wi-Fi 电子锁的影响，覆盖天线位置、PCB 接地、电机噪声与闭门验证。">
+    <meta name="twitter:image" content="https://wafulock.cn/images/webp/articles/metal-cabinet-lock-pcb-rf-architecture.webp">
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"金属柜体为什么影响无线电子锁？433 MHz、Bluetooth 与 Wi-Fi 的 PCB 天线设计","description":"解析金属柜体对 433 MHz、Bluetooth 和 Wi-Fi 电子锁的影响，覆盖天线位置、PCB 接地、电机噪声与闭门验证。","datePublished":"2026-09-29","dateModified":"2026-09-29","author":{"@type":"Organization","name":"WAFU 技术中心","url":"https://wafulock.cn/"},"publisher":{"@type":"Organization","name":"WAFU Smart Lock","logo":{"@type":"ImageObject","url":"https://wafulock.cn/images/logo.png"}},"mainEntityOfPage":"https://wafulock.cn/resource/metal-cabinet-wireless-lock-rf-pcb-design","image":"https://wafulock.cn/images/webp/articles/metal-cabinet-lock-pcb-rf-architecture.webp","articleSection":"无线柜锁射频工程","keywords":["金属柜射频","PCB 天线","433 MHz","Bluetooth 与 Wi-Fi"],"inLanguage":"zh-CN"}
+    </script>
+    <link rel="icon" type="image/webp" href="/images/favicon.png">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790114591"></script>
+    
+
+                                    <link rel="stylesheet" href="../css/technology-page.css">
+    <link rel="stylesheet" href="../css/components.css?v=20260702">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="../images/logo.png" alt="WAFU标志" width="90" height="90" decoding="async">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="移动端菜单按钮">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list" id="navList">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../products" class="nav-link">产品中心</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../products#product-RemoteLocks" class="dropdown-link">隐形遥控锁</a></li>
+                        <li><a href="../products#product-HandleLocks" class="dropdown-link">指纹执手锁</a></li>
+                        <li><a href="../products#product-PanelLocks" class="dropdown-link">面板锁</a></li>
+                        <li><a href="../products#product-CameraLocks" class="dropdown-link">猫眼智能锁</a></li>
+                        <li><a href="../products#product-KnobLocks" class="dropdown-link">球形锁</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../applicable" class="nav-link">应用场景</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../applicable/residence" class="dropdown-link">住宅</a></li>
+                        <li><a href="../applicable/office" class="dropdown-link">办公室</a></li>
+                        <li><a href="../applicable/apartment" class="dropdown-link">公寓</a></li>
+                        <li><a href="../applicable/hotel" class="dropdown-link">酒店</a></li>
+                        <li><a href="../applicable/dormitory" class="dropdown-link">学校宿舍</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../about" class="nav-link">关于我们</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../resource" class="nav-link active">资源中心</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../resource/technology" class="dropdown-link">技术文章</a></li>
+                        <li><a href="../resource/question" class="dropdown-link">常见问题</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../news" class="nav-link">新闻中心</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <span class="nav-link">语言</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://wafuen.com/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="en">English</a></li>
+                        <li><a href="https://wafulockes.com/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="es">Español</a></li>
+                        <li><a href="https://wafulockpt.com/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="pt">Português</a></li>
+                        <li><a href="https://wafulockde.com/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="de">Deutsch</a></li>
+                        <li><a href="https://wafulockfr.com/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="fr">Français</a></li>
+                        <li><a href="https://wafulockit.com/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="it">Italiano</a></li>
+                        <li><a href="https://wafulockru.com/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="ru">Русский</a></li>
+                        <li><a href="https://wafulock.cn/resource/metal-cabinet-wireless-lock-rf-pcb-design" class="dropdown-link" hreflang="zh-CN">简体中文</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact" class="nav-link">联系我们</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="breadcrumb-nav" aria-label="面包屑导航">
+        <div class="breadcrumb-inner">
+            <a href="/" class="breadcrumb-item">首页</a>
+            <span class="breadcrumb-separator"></span>
+            <a href="../resource" class="breadcrumb-item">资源中心</a>
+            <span class="breadcrumb-separator"></span>
+            <a href="./technology" class="breadcrumb-item">技术文章</a>
+            <span class="breadcrumb-separator"></span>
+            <span class="breadcrumb-current" aria-current="page">金属柜无线锁的射频与 PCB 设计</span>
+        </div>
+    </nav>
+
+    <main><section class="wafu-tech-article"><article class="wafu-main-content"><header class="wafu-article-header"><h1 class="wafu-article-title">金属柜体为什么影响无线电子锁？433 MHz、Bluetooth 与 Wi-Fi 的 PCB 天线设计</h1><div class="wafu-article-meta"><time datetime="2026-09-29">2026年9月29日</time><span class="wafu-article-author">WAFU 技术中心</span><span class="wafu-article-tags"><em class="wafu-tag">金属柜射频</em><em class="wafu-tag">PCB 天线</em><em class="wafu-tag">433 MHz</em><em class="wafu-tag">Bluetooth 与 Wi-Fi</em></span></div></header><div class="wafu-article-body"><figure class="wafu-image-box"><img src="../images/webp/articles/metal-cabinet-lock-pcb-rf-architecture.webp" alt="无线柜锁 PCB 与执行器架构" class="wafu-image" loading="eager" decoding="async" width="1200" height="675"><figcaption class="wafu-image-caption">无线柜锁 PCB 与执行器架构</figcaption></figure><p class="wafu-editor-note">本文说明通用工程原理，不对任何 WAFU 产品或柜体配置承诺固定通信距离；实际可靠性必须在最终柜体上验证。</p><p class="wafu-lead-text">无线锁在开放台架上运行正常，并不代表关上金属柜门后仍有稳定信号。柜体本身会成为射频系统的一部分：它反射能量、改变天线谐振、阻断传播路径，还可能把电机噪声耦合到无线模块。可靠设计必须从 PCB 布局开始，以真实柜体闭门测试结束。</p><nav class="wafu-toc" aria-label="目录"><h2 class="wafu-heading-2">目录</h2><ol class="wafu-list wafu-ordered-list"><li class="wafu-list-item"><a href="#metal-shielding">把金属柜体视为射频边界</a></li><li class="wafu-list-item"><a href="#frequency-comparison">按项目角色比较 433 MHz、Bluetooth 与 Wi-Fi</a></li><li class="wafu-list-item"><a href="#antenna-layout">为天线保留净空并选择正确位置</a></li><li class="wafu-list-item"><a href="#power-ground">隔离电机噪声与无线链路</a></li><li class="wafu-list-item"><a href="#closed-door-test">必须在柜门关闭状态验证</a></li><li class="wafu-list-item"><a href="#design-decisions">用测试证据决定系统架构</a></li><li class="wafu-list-item"><a href="#conclusion">结论：柜体就是天线系统的一部分</a></li></ol></nav><h2 id="metal-shielding" class="wafu-heading-2">1. 把金属柜体视为射频边界</h2><p>钢板和铝板会反射、吸收无线能量。接近封闭的柜体类似不完整的法拉第屏蔽体，门缝、铰链、走线孔和非金属窗口会成为主要泄漏路径，细小结构变化也可能显著改变链路质量。</p><p>锁体位置、天线方向和用户位置必须一起评估。若天线朝向柜体内部，能量可能主要耦合进金属腔体，而不是传到柜外接收端。</p><h2 id="frequency-comparison" class="wafu-heading-2">2. 按项目角色比较 433 MHz、Bluetooth 与 Wi-Fi</h2><p>433 MHz 适合简单、低功耗的遥控控制，对部分遮挡可能更宽容，但仍受天线尺寸和区域法规约束。Bluetooth 适合近距离手机开锁和配置，Wi-Fi 可直接联网，但通常功耗更高，也依赖接入点位置。</p><p>频率更低不等于一定能穿透金属。协议开销、天线效率、发射功率、接收灵敏度、占空比和柜体几何共同决定可用链路余量。</p><figure class="wafu-image-box"><img src="../images/webp/articles/metal-cabinet-rf-field-shielding.webp" alt="金属柜体内部的射频屏蔽" class="wafu-image" loading="lazy" decoding="async" width="1200" height="675"><figcaption class="wafu-image-caption">金属柜体内部的射频屏蔽</figcaption></figure><h2 id="antenna-layout" class="wafu-heading-2">3. 为天线保留净空并选择正确位置</h2><p>应按照所选模块或天线要求，让铜皮、地平面、电池、电机和金属支架远离天线区域。把天线放到柜体边缘或受控的非金属窗口附近，通常比单纯提高发射功率更有效。</p><p>必须评估装配后的整机。线束、螺钉、屏蔽罩和电池仓变化，都可能让裸板测试正常的天线在量产结构中失谐。</p><figure class="wafu-image-box"><img src="../images/webp/articles/cabinet-lock-antenna-placement-comparison.webp" alt="柜锁天线位置对比" class="wafu-image" loading="lazy" decoding="async" width="1200" height="675"><figcaption class="wafu-image-caption">柜锁天线位置对比</figcaption></figure><h2 id="power-ground" class="wafu-heading-2">4. 隔离电机噪声与无线链路</h2><p>锁闭瞬间会出现电流阶跃、电刷噪声和电压跌落。供电路径、本地去耦、接地和走线隔离需要保证无线模块与控制器在最大机械负载下仍然稳定。</p><p>测试应覆盖电机启动、短时堵转和反转，同时观察通信。若系统只能在电机静止时保持无线连接，它可能在远程开锁最需要确认的瞬间失效。</p><h2 id="closed-door-test" class="wafu-heading-2">5. 必须在柜门关闭状态验证</h2><p>分别记录开门和闭门状态下的配对、命令成功率、响应时间和故障恢复，并在真实用户位置、邻近柜体和实际网关条件下测试，同时覆盖低电量和连续操作。</p><p>报告必须记录方向、距离、柜体材料、门缝、天线版本、固件和电源状态。脱离这些条件的单一“最远距离”不能作为验收标准。</p><figure class="wafu-image-box"><img src="../images/webp/articles/cabinet-lock-spectrum-validation-panel.webp" alt="闭合金属柜体射频验证" class="wafu-image" loading="lazy" decoding="async" width="1200" height="675"><figcaption class="wafu-image-caption">闭合金属柜体射频验证</figcaption></figure><h2 id="design-decisions" class="wafu-heading-2">6. 用测试证据决定系统架构</h2><p>若天线无法靠近透波边界，应考虑受保护的外置天线、有线读卡器、外部网关或不同的授权架构。正确答案可能是机械与电气重构，而不是修改一个无线参数。</p><p>批准样机后，应冻结天线几何、柜体材料和线束路径。即使电路图不变，天线周围的量产结构变化也必须做回归测试。</p><h2 id="conclusion" class="wafu-heading-2">7. 结论：柜体就是天线系统的一部分</h2><p>金属柜无线锁的射频表现不是单独的 PCB 指标。柜体几何、天线净空、接地、电机电流和现场位置共同决定结果。</p><p>先定义柜体和用户路径，再为 433 MHz、Bluetooth 或 Wi-Fi 设定明确角色，最后在完整闭门组件上完成量产前验证。</p><section class="wafu-article-cta"><h3 class="wafu-heading-3">项目咨询与 OEM/ODM</h3><p>请提供柜体图纸、板材、数量和无线需求，以便确定可验证的样机开发路径。</p><p class="wafu-cta-actions"><a href="../products/product-010" class="wafu-consult-btn">查看 WF-010</a><a href="../contact" class="wafu-consult-btn wafu-cta-btn-secondary">联系我们</a></p></section></div><footer class="wafu-article-footer"><section class="wafu-share-section"><h4 class="wafu-share-title">分享本文</h4><div class="wafu-share-buttons"><a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fwafulock.cn%2Fresource%2Fmetal-cabinet-wireless-lock-rf-pcb-design&title=%E9%87%91%E5%B1%9E%E6%9F%9C%E4%BD%93%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BD%B1%E5%93%8D%E6%97%A0%E7%BA%BF%E7%94%B5%E5%AD%90%E9%94%81%EF%BC%9F433%20MHz%E3%80%81Bluetooth%20%E4%B8%8E%20Wi-Fi%20%E7%9A%84%20PCB%20%E5%A4%A9%E7%BA%BF%E8%AE%BE%E8%AE%A1" class="social-icon weibo" aria-label="分享到微博" target="_blank" rel="noopener noreferrer"></a><button type="button" class="social-icon wechat wafu-share-copy" aria-label="复制链接到微信"></button><a href="https://v.douyin.com/0wUlMqC9nM4/" class="social-icon douyin" aria-label="抖音" target="_blank" rel="noopener noreferrer"></a><a href="https://space.bilibili.com/3546585736677604" class="social-icon bilibili" aria-label="哔哩哔哩" target="_blank" rel="noopener noreferrer"></a><a href="https://www.xiaohongshu.com/search_result?keyword=WAFU%E6%99%BA%E8%83%BD%E9%94%81" class="social-icon xiaohongshu" aria-label="小红书" target="_blank" rel="noopener noreferrer"></a><a href="https://www.zhihu.com/search?q=WAFU%E6%99%BA%E8%83%BD%E9%94%81" class="social-icon zhihu" aria-label="知乎" target="_blank" rel="noopener noreferrer"></a></div></section><div class="wafu-related-tags"><h4 class="wafu-related-tags-title">相关文章</h4><nav class="wafu-tag-list"><span class="wafu-tag-item">金属柜射频</span><span class="wafu-tag-item">PCB 天线</span><span class="wafu-tag-item">433 MHz</span><span class="wafu-tag-item">Bluetooth 与 Wi-Fi</span></nav></div><nav class="wafu-article-nav"><span class="wafu-nav-prev wafu-nav-disabled" aria-disabled="true"><span class="wafu-nav-arrow">❮</span><span class="wafu-nav-content"><span class="wafu-nav-label">上一篇</span><span class="wafu-nav-text">敬请期待</span></span></span><a class="wafu-nav-next" href="./wf-010-wf-019-electronic-cabinet-lock-feasibility"><span class="wafu-nav-content"><span class="wafu-nav-label">下一篇</span><span class="wafu-nav-text">WF-010 / WF-019 电子柜锁适配评估</span></span><span class="wafu-nav-arrow">❯</span></a></nav></footer></article><aside class="wafu-side-bar"><section class="wafu-about-card"><img class="wafu-brand-logo" src="../images/logo.png" alt="WAFU Smart Lock"><h3 class="wafu-brand-name">WAFU</h3><p class="wafu-brand-desc">WAFU 为 B2B 项目团队提供隐形锁工程、OEM/ODM 开发与样机验证支持。</p><a href="../resource/technology" class="wafu-more-link">更多技术文章</a></section><section class="wafu-related-articles"><h4 class="wafu-side-title">相关文章</h4><ul class="wafu-related-list"><li class="wafu-related-item"><a class="wafu-related-link" href="./wf-010-wf-019-electronic-cabinet-lock-feasibility">WF-010 / WF-019 电子柜锁适配评估</a></li><li class="wafu-related-item"><a class="wafu-related-link" href="./invisible-lock-protocol-comparison">智能锁硬件与协议架构比较</a></li><li class="wafu-related-item"><a class="wafu-related-link" href="./invisible-lock-mechanical-alignment-guide">隐形智能锁安装几何与驱动负载验证</a></li></ul></section><section class="wafu-consult-card"><h4 class="wafu-consult-title">项目咨询与 OEM/ODM</h4><p class="wafu-consult-desc">请提供柜体图纸、板材、数量和无线需求，以便确定可验证的样机开发路径。</p><a class="wafu-consult-btn" href="../contact">联系我们</a></section></aside></section></main>
+    <div class="float-kefu">
+        <div class="kefu-item wechat" tabindex="0">
+            <img src="../icons/icon-wechat.svg" alt="微信" class="kefu-icon">
+            <div class="kefu-popup wechat-popup">
+                <img src="../images/WeChat.png" alt="微信二维码" class="qr-code" width="200" height="200" decoding="async">
+                <p>扫码咨询</p>
+            </div>
+        </div>
+        <div class="kefu-item email" tabindex="0">
+            <img src="../icons/icon-email.svg" alt="邮箱" class="kefu-icon">
+            <div class="kefu-popup email-popup">
+                <p>国内咨询：szwafu@163.com<br>海外咨询：wafutechnology@outlook.com</p>
+            </div>
+        </div>
+        <div class="kefu-item phone" tabindex="0">
+            <img src="../icons/icon-phone.svg" alt="电话" class="kefu-icon">
+            <div class="kefu-popup phone-popup">
+                <p>电话：+86 15914193183</p>
+            </div>
+        </div>
+    </div>
+        <div class="back-top" id="backTop" title="返回顶部">
+        <img src="../icons/icon-backTop.svg" alt="返回顶部">
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <section class="footer-col">
+                <h2 class="footer-title">华府智能锁</h2>
+                <p class="footer-text">
+                    深圳市华府智能科技有限公司成立于 2013 年，拥有 13 年智能锁研发及生产经验，服务全球 8000+ 客户。专业提供智能门锁、隐形防盗锁、人脸识别锁等全系列产品的 OEM/ODM 方案，广泛应用于公寓、酒店、办公及住宅项目，致力于打造高品质智能安防产品。
+                </p>
+                                    <div class="footer-socials" aria-label="社交媒体">
+                        <a href="#wechat" class="social-icon wechat" aria-label="微信" title="微信"></a>
+                        <a href="https://v.douyin.com/0wUlMqC9nM4/" class="social-icon douyin" aria-label="抖音" title="抖音" target="_blank" rel="noopener noreferrer"></a>
+                        <a href="https://space.bilibili.com/3546585736677604" class="social-icon bilibili" aria-label="哔哩哔哩" title="哔哩哔哩" target="_blank" rel="noopener noreferrer"></a>
+                        <a href="https://s.weibo.com/weibo?q=WAFU%E6%99%BA%E8%83%BD%E9%94%81" class="social-icon weibo" aria-label="微博" title="微博" target="_blank" rel="noopener noreferrer"></a>
+                        <a href="https://www.xiaohongshu.com/search_result?keyword=WAFU%E6%99%BA%E8%83%BD%E9%94%81" class="social-icon xiaohongshu" aria-label="小红书" title="小红书" target="_blank" rel="noopener noreferrer"></a>
+                        <a href="https://www.zhihu.com/search?q=WAFU%E6%99%BA%E8%83%BD%E9%94%81" class="social-icon zhihu" aria-label="知乎" title="知乎" target="_blank" rel="noopener noreferrer"></a>
+                    </div>
+            </section>
+
+            <section class="footer-col">
+                <h2 class="footer-title">快速链接</h2>
+                <ul class="footer-list">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="../products">产品中心</a></li>
+                    <li><a href="../applicable">应用场景</a></li>
+                    <li><a href="../about">关于我们</a></li>
+                    <li><a href="../resource">资源中心</a></li>
+                    <li><a href="../news">新闻中心</a></li>
+                    <li><a href="../contact">联系我们</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-col">
+                <h2 class="footer-title">产品分类</h2>
+                <ul class="footer-list">
+                    <li><a href="../products#product-RemoteLocks">隐形遥控锁</a></li>
+                    <li><a href="../products#product-HandleLocks">执手锁</a></li>
+                    <li><a href="../products#product-PanelLocks">面板锁</a></li>
+                    <li><a href="../products#product-CameraLocks">猫眼摄像锁</a></li>
+                    <li><a href="../products#product-KnobLocks">球形门锁</a></li>
+                </ul>
+            </section>
+            <section class="footer-col">
+                <h2 class="footer-title">全球站点</h2>
+                <ul class="footer-list">
+                    <li><a href="https://wafuen.com/" hreflang="en">English</a></li>
+                    <li><a href="https://wafulockde.com/" hreflang="de">Deutsch</a></li>
+                    <li><a href="https://wafulockes.com/" hreflang="es">Español</a></li>
+                    <li><a href="https://wafulockpt.com/" hreflang="pt">Português</a></li>
+                    <li><a href="https://wafulockfr.com/" hreflang="fr">Français</a></li>
+                    <li><a href="https://wafulockit.com/" hreflang="it">Italiano</a></li>
+                    <li><a href="https://wafulockru.com/" hreflang="ru">Русский</a></li>
+<li><a href="https://wafulock.cn/" hreflang="zh-CN">简体中文</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-col">
+                <h2 class="footer-title">联系我们</h2>
+                <ul class="footer-contact">
+                    <li class="footer-contact-item">
+                        <span class="footer-icon" aria-hidden="true">✉️</span>
+                        国内咨询：szwafu@163.com
+                    </li>
+                    <li class="footer-contact-item">
+                        <span class="footer-icon" aria-hidden="true">✉️</span>
+                        海外咨询：wafutechnology@outlook.com
+                    </li>
+                    <li class="footer-contact-item">
+                        <span class="footer-icon" aria-hidden="true">📞</span>
+                        <a class="footer-contact-link" href="tel:+8615914193183">手机：+86 15914193183</a>
+                    </li>
+                    <li class="footer-contact-item">
+                        <span class="footer-icon" aria-hidden="true">💬</span>
+                        微信：15914193183（手机同号）
+                    </li>
+                    <li class="footer-contact-item">
+                        <span class="footer-icon" aria-hidden="true">🕒</span>
+                        周一至周六：9:00–18:00（GMT+8）
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer-separator"></div>
+        <div class="footer-bottom-wrapper">
+            <div class="footer-bottom">
+                <span>© 2026 深圳市华府智能科技有限公司 版权所有</span>
+                <a href="../privacy" class="footer-privacy">隐私政策</a>
+                <a href="../sitemap" class="footer-sitemap">站点地图</a><a href="https://beian.miit.gov.cn/" class="footer-icp" target="_blank" rel="noopener noreferrer">粤ICP备17093211号</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/wechat-footer.js?v=20260705" defer></script>
+    <script src="../js/article-share.js?v=20260705" defer></script>
+    <script src="../js/all.js" defer></script>
+    <script src="../js/analytics-deferred.js" defer></script>
+
+</body>
+
+</html>
