@@ -1834,36 +1834,134 @@ img {
     height: auto;
     vertical-align: middle;
 }
-/* Article and sidebar proportions stay stable across the shared language layout. */
-@media (min-width: 769px) {
-    .wafu-tech-article {
-        display: grid;
-        grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
-        align-items: start;
-    }
-
-    .wafu-main-content,
-    .wafu-side-bar {
-        width: auto;
-    }
-
-    .wafu-side-bar {
-        align-self: start;
-    }
+/* Shared article layout for all language sites. */
+.wafu-tech-article {
+    width: min(100%, 1440px);
+    margin: 0 auto;
+    padding: 30px clamp(20px, 3vw, 44px);
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(250px, 1fr);
+    align-items: start;
+    gap: 28px;
 }
 
-@media (max-width: 768px) {
+.wafu-main-content,
+.wafu-side-bar {
+    width: auto;
+    min-width: 0;
+}
+
+.wafu-main-content {
+    padding: 36px;
+}
+
+.wafu-side-bar {
+    align-self: start;
+}
+
+@media (max-width: 900px) {
     .wafu-tech-article {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 24px 20px;
     }
 
-    .wafu-main-content,
+    .wafu-main-content {
+        padding: 28px;
+    }
+
     .wafu-side-bar {
         width: 100%;
     }
+}
 
-    .wafu-side-bar {
-        flex: none;
+@media (max-width: 640px) {
+    .wafu-tech-article {
+        padding: 18px 14px;
+        gap: 20px;
     }
+
+    .wafu-main-content {
+        padding: 20px 16px;
+    }
+}
+/* Article breadcrumb consistency */
+.breadcrumb-nav .breadcrumb-inner > a.breadcrumb-item {
+    color: #555;
+}
+
+.breadcrumb-nav .breadcrumb-inner > a.breadcrumb-item:hover,
+.breadcrumb-nav .breadcrumb-inner > a.breadcrumb-item:focus-visible {
+    color: #1a73e8;
+}
+
+.breadcrumb-nav .breadcrumb-inner > .breadcrumb-current,
+.breadcrumb-nav .breadcrumb-inner > span.breadcrumb-item:last-child,
+.breadcrumb-nav .breadcrumb-inner > [aria-current="page"] {
+    color: #333;
+    font-weight: 500;
+}
+
+.breadcrumb-nav .breadcrumb-inner > .breadcrumb-separator {
+    color: #8a9199;
+}
+
+.breadcrumb-nav .breadcrumb-inner > .breadcrumb-separator:empty::before {
+    content: "›";
+}
+
+/* ===== Article topic clusters and image frames ===== */
+.wafu-topic-cluster--sidebar {
+    --wafu-article-accent: #1a73e8;
+    border: 1px solid rgba(26, 115, 232, .2);
+    border-left: 4px solid var(--wafu-article-accent);
+    background: #fff;
+    padding: 18px;
+}
+
+.wafu-topic-cluster--sidebar > .wafu-side-title {
+    margin: 0 0 14px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid var(--wafu-article-accent);
+    color: var(--wafu-article-accent);
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.wafu-topic-cluster-list--sidebar {
+    gap: 8px;
+}
+
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-item {
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid #e3e6eb;
+    border-radius: 6px;
+    background: #fff;
+    overflow-wrap: anywhere;
+}
+
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-item.is-current {
+    border-color: var(--wafu-article-accent);
+    background: var(--wafu-article-accent);
+}
+
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-item.is-current,
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-item.is-current a,
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-item.is-current .wafu-topic-cluster-role,
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-item.is-current .wafu-topic-cluster-title {
+    color: #fff;
+}
+
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-link:hover,
+.wafu-topic-cluster-list--sidebar .wafu-topic-cluster-link:focus-visible {
+    color: var(--wafu-article-accent);
+}
+
+.wafu-image-box {
+    border: 1px solid rgba(26, 115, 232, .2);
+    background: #eff5fd;
+}
+
+.wafu-image-caption {
+    color: #454545;
 }
