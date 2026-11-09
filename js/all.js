@@ -941,9 +941,7 @@
         const rootMargin = isMobile ? 120 : 50;
 
         if (!('IntersectionObserver' in window)) {
-            images.forEach((img, index) => {
-                if (index < 3) activateLazyImage(img);
-            });
+            images.forEach(img => activateLazyImage(img));
             return;
         }
 

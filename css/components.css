@@ -2135,3 +2135,8 @@ body:has(main .news-list) .breadcrumb-nav .breadcrumb-column {
   filter: brightness(0.9);
   box-shadow: 0 8px 20px rgba(25, 42, 62, 0.26);
 }
+
+/* Shared non-home rendering guard: prevent fixed navigation and wide content from breaking page layout. */
+html,body { max-width: 100%; overflow-x: hidden; }
+@media (max-width: 958px) { body { padding-top: 90px; } }
+

@@ -65,6 +65,8 @@ https://wafulock.cn/* https://wafulock.cn/:splat 301
 /resource.html /resource 301
 /sitemap.html /sitemap 301
 /privacy.html /privacy 301
+/products/product-016 /products 301
+/products/product-016.html /products 301
 /products/*.html /products/:splat 301
 /resource/*.html /resource/:splat 301
 /applicable/*.html /applicable/:splat 301
